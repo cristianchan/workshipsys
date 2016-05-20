@@ -1,0 +1,17 @@
+{
+  "name": "apicuadros",
+  "version": "1.0.0",
+  "description": "api para manejo de cuadros de privilegios de jovenes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+ 		"mongoose": "~3.6.11",
+ 		"express": "^4.7.1",
+ 		"method-override": "^2.1.2",
+ 		"body-parser": "^1.5.1"
+  },
+  "author": "Cristian Giovanni Chan Espinal",
+  "license": "ISC"
+}
