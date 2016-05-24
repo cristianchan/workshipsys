@@ -8,27 +8,37 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 require("./models/person");
-var personCtrl = require('./controllers/person');
-var router = express.Router();
+require("./models/user")
 
+
+var personCtrl = require('./controllers/person');
+var userCtrl = require('./controllers/user');
+console.log(userCtrl);
+
+var router = express.Router();
 router.get('/', function(req, res) {  
    res.send("Hello World!");
 });
-
 app.use(router);
 
 
 
 var persons = express.Router();
-
 persons.route('/person')  
   .get(personCtrl.findAllPersons)
-  .post(personCtrl.addPerson);
-app.use('/api', persons); 
+  .post(personCtrl.addPerson);app.use('/api', persons); 
+
+
+var user = express.Router();
+user.route('/user')  
+  .get(userCtrl.findAllUsers)
+  .post(userCtrl.addUser);app.use('/api', user); 
 
 
 
-mongoose.connect('mongodb://localhost/person', function(err, res) {  
+
+
+mongoose.connect('mongodb://localhost/workshipsys', function(err, res) {  
   if(err) {
     console.log('ERROR: connecting to Database. ' + err);
   }
@@ -36,7 +46,6 @@ mongoose.connect('mongodb://localhost/person', function(err, res) {
     console.log("Node server running on http://localhost:3000");
   });
 });
-
 
 
 

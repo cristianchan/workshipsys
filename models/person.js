@@ -22,9 +22,18 @@ var person = new Schema({
 		nombre: 	{ type: String },
 		apellidos:	{ type: String },
 		telefono : 	{ type: String },
-		correo: 	{ type: String}
+		correo: 	{ type: String }
+	},
+	Disponibilidad : {
+		miercoles: 	{ type: Boolean },
+		viernes: 	{ type: Boolean },
+		sabado: 	{ type: Boolean },
+		domingo1: 	{ type: Boolean },
+		domingo2: 	{ type: Boolean },
+		domingo3:   { type: Boolean },
+		domingo4:	{ type: Boolean }
 	}
 		
-});
+},{ collection: 'person' });
 
 module.exports = mongoose.model('person', person);  
